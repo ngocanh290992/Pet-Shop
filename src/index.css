@@ -393,8 +393,10 @@ i.ri-close-line{
     color: white;
     position: absolute;
     height: 100vh;
-    width: 300px;
+    width: 0;
     top: 60px;
+    opacity: 0;
+    transition: all .3s;
 }
 
 .content{
@@ -402,4 +404,10 @@ i.ri-close-line{
     color: white;
     text-align: center;
     height: 100vh;
+}
+
+/* Show menu Admin  */
+.show-menuAdmin{
+    width: 250px;
+    opacity: 1;
 }

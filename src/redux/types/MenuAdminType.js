@@ -1,0 +1,1 @@
+export const SHOW_MENU_ADMIN = 'SHOW_MENU_ADMIN'

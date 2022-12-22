@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { SHOW_MENU_ADMIN } from "../../redux/types/MenuAdminType";
 
 export default function HeaderAdminTemplate(props) {
+  const {btnMenu} = useSelector(state => state.MenuAdminReducer)
+  const dispatch = useDispatch()
+
   const [navMenuShow, setNavMenuShow] = useState(false);
   const [menuShow, setMenuShow] = useState("");
   const [btnOpenUserInfo, setBtnOpenUserInfo] = useState(false)
@@ -26,7 +31,11 @@ export default function HeaderAdminTemplate(props) {
     <header className="headerAdmin" id="headerAdmin">
       <nav>
         <div className="headerAdmin__toggle btn">
-          <i className="ri-menu-line"></i>
+          <i className="ri-menu-line" onClick={() => {
+            dispatch({
+              type: SHOW_MENU_ADMIN
+            })
+          }}></i>
         </div>
         <div className="headerAdmin__logo">Admin</div>
         <div className="headerAdmin__menu">
