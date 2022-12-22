@@ -34,7 +34,7 @@ export default function HeaderAdminTemplate(props) {
             <div className={`headerAdmin__menu--left ${openSearchHeaderMenuLeft}`}>
               <i className={`ri-search-line btn ${openSearchBtnSearch}`} onClick={() => {
                 setBtnOpenSearch(true)
-                if(!btnOpenSearch){
+                if (!btnOpenSearch) {
                   setOpenSearchInput('show-search__input')
                   setOpenSearchHeaderMenu('show-search__headerMenu')
                   setOpenSearchBtnSearch('show-search__btnSearch')
@@ -43,18 +43,18 @@ export default function HeaderAdminTemplate(props) {
                 }
 
               }}></i>
-              <input placeholder="Search" className={`${openSearchInput}`}/>
+              <input placeholder="Search" className={`${openSearchInput}`} />
             </div>
 
             <i className={`ri-close-line btn ${openSearchClose}`} onClick={() => {
               setBtnOpenSearch(false)
-              if(btnOpenSearch){
+              if (btnOpenSearch) {
                 setOpenSearchInput('')
                 setOpenSearchHeaderMenu('')
                 setOpenSearchBtnSearch('')
                 setOpenSearchClose('')
                 setOpenSearchHeaderMenuLeft('')
-                
+
                 // -- set user info --               
                 setBtnOpenUserInfo(false)
                 setOpenUserInfo('')
@@ -80,7 +80,7 @@ export default function HeaderAdminTemplate(props) {
             <div className="headerAdmin__menu--right">
               <i className="ri-function-line btn" onClick={() => {
                 setBtnOpenDashBoard(!btnOpenDashBoard)
-                if(!btnOpenDashBoard){
+                if (!btnOpenDashBoard) {
                   setOpenDashBoard('show-dashBoard')
 
                   // sel close userInfo, userOnline, language, notification
@@ -95,13 +95,13 @@ export default function HeaderAdminTemplate(props) {
 
                   setBtnOpenNotification(false)
                   setOpenNotification('')
-                }else{
+                } else {
                   setOpenDashBoard('')
                 }
               }}></i>
               <i className="ri-notification-4-line btn" onClick={() => {
                 setBtnOpenNotification(!btnOpenNotification)
-                if(!btnOpenNotification){
+                if (!btnOpenNotification) {
                   setOpenNotification('show-notification')
 
                   // set close openUserInfo, userOnline, language, dashBoard
@@ -116,13 +116,13 @@ export default function HeaderAdminTemplate(props) {
 
                   setBtnOpenDashBoard(false)
                   setOpenDashBoard('')
-                }else{
+                } else {
                   setOpenNotification('')
                 }
               }}></i>
               <i className="ri-flag-line btn" onClick={() => {
                 setBtnOpenLanguage(!btnOpenLanguage)
-                if(!btnOpenLanguage){
+                if (!btnOpenLanguage) {
                   setOpenLanguage('show-language')
 
                   // set close user info, user Online, notification, dashBoard
@@ -137,13 +137,13 @@ export default function HeaderAdminTemplate(props) {
 
                   setBtnOpenDashBoard(false)
                   setOpenDashBoard('')
-                }else{
+                } else {
                   setOpenLanguage('')
                 }
               }}></i>
               <i className="ri-landscape-line btn" onClick={() => {
                 setBtnOpenUserOnline(!btnOpenUserOnline)
-                if(!btnOpenUserOnline){
+                if (!btnOpenUserOnline) {
                   setOpenUserOnline('show-userOnline')
 
                   // set close user info, languege, notification, dashBoard
@@ -158,14 +158,14 @@ export default function HeaderAdminTemplate(props) {
 
                   setBtnOpenDashBoard(false)
                   setOpenDashBoard('')
-                }else{
+                } else {
                   setOpenUserOnline('')
                 }
               }}></i>
               <div className="userInfo btn" onClick={() => {
 
                 setBtnOpenUserInfo(!btnOpenUserInfo)
-                
+
                 if (!btnOpenUserInfo) {
                   setOpenUserInfo("show-userInfo");
 
@@ -182,7 +182,7 @@ export default function HeaderAdminTemplate(props) {
                   setBtnOpenDashBoard(false)
                   setOpenDashBoard('')
                 } else {
-                  setOpenUserInfo("");                
+                  setOpenUserInfo("");
                 }
 
               }}>
@@ -206,11 +206,11 @@ export default function HeaderAdminTemplate(props) {
                   <li>Activity</li>
 
                   <li>
-                    <a href="#">Chat</a>
+                    <a href="/#">Chat</a>
                   </li>
 
                   <li>
-                    <a href="#">Recover Password</a>
+                    <a href="/#">Recover Password</a>
                   </li>
 
                   <li>My Account</li>
@@ -219,24 +219,24 @@ export default function HeaderAdminTemplate(props) {
 
               <div className="userInfo-short__active">
                 <div className="userInfo-short__activeItem">
-                  
-                    <button className="btn message--inbox">
+
+                  <button className="btn message--inbox">
                     Message Inbox
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn support--ticket">
+                  <button className="btn support--ticket">
                     Support Tickets
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn open--message">
+                  <button className="btn open--message">
                     Open Message
-                    </button>
+                  </button>
                 </div>
               </div>
 
-            </div> 
+            </div>
 
             <div className={`userInfo-short ${openNotification}`}>
               <div className="userInfo-short__header">
@@ -253,11 +253,11 @@ export default function HeaderAdminTemplate(props) {
                   <li>Activity</li>
 
                   <li>
-                    <a href="#">Chat</a>
+                    <a href="/#">Chat</a>
                   </li>
 
                   <li>
-                    <a href="#">Recover Password</a>
+                    <a href="/#">Recover Password</a>
                   </li>
 
                   <li>My Account</li>
@@ -266,24 +266,24 @@ export default function HeaderAdminTemplate(props) {
 
               <div className="userInfo-short__active">
                 <div className="userInfo-short__activeItem">
-                  
-                    <button className="btn message--inbox">
+
+                  <button className="btn message--inbox">
                     Message Inbox
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn support--ticket">
+                  <button className="btn support--ticket">
                     Support Tickets
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn open--message">
+                  <button className="btn open--message">
                     Open Message
-                    </button>
+                  </button>
                 </div>
               </div>
 
-            </div> 
+            </div>
 
             <div className={`userInfo-short ${openLanguage}`}>
               <div className="userInfo-short__header">
@@ -300,11 +300,11 @@ export default function HeaderAdminTemplate(props) {
                   <li>Activity</li>
 
                   <li>
-                    <a href="#">Chat</a>
+                    <a href="/#">Chat</a>
                   </li>
 
                   <li>
-                    <a href="#">Recover Password</a>
+                    <a href="/#">Recover Password</a>
                   </li>
 
                   <li>My Account</li>
@@ -313,24 +313,24 @@ export default function HeaderAdminTemplate(props) {
 
               <div className="userInfo-short__active">
                 <div className="userInfo-short__activeItem">
-                  
-                    <button className="btn message--inbox">
+
+                  <button className="btn message--inbox">
                     Message Inbox
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn support--ticket">
+                  <button className="btn support--ticket">
                     Support Tickets
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn open--message">
+                  <button className="btn open--message">
                     Open Message
-                    </button>
+                  </button>
                 </div>
               </div>
 
-            </div> 
+            </div>
 
             <div className={`userInfo-short ${openUserOnline}`}>
               <div className="userInfo-short__header">
@@ -347,11 +347,11 @@ export default function HeaderAdminTemplate(props) {
                   <li>Activity</li>
 
                   <li>
-                    <a href="#">Chat</a>
+                    <a href="/#">Chat</a>
                   </li>
 
                   <li>
-                    <a href="#">Recover Password</a>
+                    <a href="/#">Recover Password</a>
                   </li>
 
                   <li>My Account</li>
@@ -360,25 +360,25 @@ export default function HeaderAdminTemplate(props) {
 
               <div className="userInfo-short__active">
                 <div className="userInfo-short__activeItem">
-                  
-                    <button className="btn message--inbox">
+
+                  <button className="btn message--inbox">
                     Message Inbox
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn support--ticket">
+                  <button className="btn support--ticket">
                     Support Tickets
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn open--message">
+                  <button className="btn open--message">
                     Open Message
-                    </button>
+                  </button>
                 </div>
               </div>
 
             </div>
-              
+
             <div className={`userInfo-short ${openUserInfo}`}>
               <div className="userInfo-short__header">
                 <img src="https://picsum.photos/40" alt="avatar" />
@@ -394,11 +394,11 @@ export default function HeaderAdminTemplate(props) {
                   <li>Activity</li>
 
                   <li>
-                    <a href="#">Chat</a>
+                    <a href="/#">Chat</a>
                   </li>
 
                   <li>
-                    <a href="#">Recover Password</a>
+                    <a href="/#">Recover Password</a>
                   </li>
 
                   <li>My Account</li>
@@ -407,26 +407,26 @@ export default function HeaderAdminTemplate(props) {
 
               <div className="userInfo-short__active">
                 <div className="userInfo-short__activeItem">
-                  
-                    <button className="btn message--inbox">
+
+                  <button className="btn message--inbox">
                     Message Inbox
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn support--ticket">
+                  <button className="btn support--ticket">
                     Support Tickets
-                    </button>
+                  </button>
                 </div>
                 <div className="userInfo-short__activeItem">
-                    <button className="btn open--message">
+                  <button className="btn open--message">
                     Open Message
-                    </button>
+                  </button>
                 </div>
               </div>
 
-            </div>  
+            </div>
 
-            
+
 
           </div>
 
@@ -438,7 +438,7 @@ export default function HeaderAdminTemplate(props) {
                 setMenuShow("show-menu");
               } else {
                 setMenuShow("");
-                
+
                 // -- set user info --               
                 setBtnOpenUserInfo(false)
                 setOpenUserInfo('')
@@ -461,10 +461,10 @@ export default function HeaderAdminTemplate(props) {
 
                 // -- set open search --
                 setBtnOpenSearch(false)
-                setOpenSearchInput('') 
-                setOpenSearchHeaderMenu('') 
-                setOpenSearchBtnSearch('') 
-                setOpenSearchClose('') 
+                setOpenSearchInput('')
+                setOpenSearchHeaderMenu('')
+                setOpenSearchBtnSearch('')
+                setOpenSearchClose('')
                 setOpenSearchHeaderMenuLeft('')
               }
               setNavMenuShow(!navMenuShow);
