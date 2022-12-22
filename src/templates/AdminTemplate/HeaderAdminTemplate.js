@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { SHOW_MENU_ADMIN } from "../../redux/types/MenuAdminType";
 
 export default function HeaderAdminTemplate(props) {
-  const {btnMenu} = useSelector(state => state.MenuAdminReducer)
   const dispatch = useDispatch()
 
   const [navMenuShow, setNavMenuShow] = useState(false);
