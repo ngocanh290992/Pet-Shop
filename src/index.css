@@ -136,11 +136,12 @@ i.ri-close-line {
   border: none;
   outline: none;
   background-color: transparent;
-  padding-top: 14px;
+  padding-top: 11px;
   margin-right: 20px;
   width: 40px;
   display: none;
   transition: all 0.3s;
+  font-size: .88rem;
 }
 
 .headerAdmin__menu i.ri-close-line {
