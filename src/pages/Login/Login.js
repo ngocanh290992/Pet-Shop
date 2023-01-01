@@ -14,15 +14,14 @@ export default function Login(props) {
 
     const formik = useFormik({
         initialValues: {
-            taiKhoan: '',
-            matKhau: '',
+            email: '',
+            password: '',
         },
         validationSchema: Yup.object({
-            taiKhoan: Yup.string()
-                .required("Required!"),
-            matKhau: Yup.string()
-                .required("Required!"),
-
+            email: Yup.string()
+                .required("Required!").email(),
+            password: Yup.string()
+                .required("Required!")
         }),
         onSubmit: values => {
             dispatch(dangNhapAction(values))
@@ -33,18 +32,19 @@ export default function Login(props) {
             <h1 className="text-2xl font-bold text-center text-blue-600">Login</h1>
             <form onSubmit={formik.handleSubmit} className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
-                    <label htmlFor="taiKhoan" className="block text-gray-800">Username</label>
-                    <input onChange={formik.handleChange} type="text" name="taiKhoan" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
+                    <label htmlFor="email" className="block text-gray-800">Email</label>
+                    <input onChange={formik.handleChange} type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
                     {formik.errors.taiKhoan && formik.touched.taiKhoan && (
                         <p className='text-xs text-red-500'>{formik.errors.taiKhoan}</p>)}
                 </div>
                 <div className="space-y-1 text-sm">
-                    <label htmlFor="matKhau" className="block text-gray-800">Password</label>
-                    <input onChange={formik.handleChange} type="password" name="matKhau" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
+                    <label htmlFor="password" className="block text-gray-800">Password</label>
+                    <input onChange={formik.handleChange} type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
                     <div className="flex justify-end text-xs text-gray-600">
                         <a rel="noopener noreferrer" href="/#">Forgot Password?</a>
                     </div>
                 </div>
+
                 <button type='submit' className="block w-full p-3 text-center rounded-md text-gray-50 bg-indigo-700 hover:bg-blue-600 duration-300">Sign in</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">

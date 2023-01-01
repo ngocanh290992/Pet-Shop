@@ -9,22 +9,23 @@ export const dangNhapAction = (thongTinDangNhap) => {
 
 
     return async (dispatch) => {
+
         try {
             //Sử dụng tham số thamSo
             const result = await quanLyNguoiDungService.dangNhap(thongTinDangNhap);
-            // console.log({result})
+            console.log(result)
             if (result.status === 200) {
+                alert("Đăng nhập thành công")
                 dispatch({
                     type: DANG_NHAP_ACTION,
-                    thongTinDangNhap: result.data.content
+                    thongTinDangNhap: result.data
                 });
 
-                history.push('/')
+                // history.push('/')
             }
 
         } catch (errors) {
-            alert(` ${errors.response.data.content}`)
-            console.log('errors', errors.response.data)
+            alert(`status: ${errors.response.status} - ${errors.response.data.messeger}`)
         }
     };
 }
@@ -60,24 +61,23 @@ export const layThongTinNguoiDungAction = (thongTinDangNhap) => {
 
 
 export const dangKyAction = (nguoiDungMoi) => {
-    // console.log({nguoiDungMoi})
     return async dispatch => {
 
         try {
 
             const result = await quanLyNguoiDungService.dangKy(nguoiDungMoi);
-
-            if (result.data.statusCode === 200) {
+            console.log(result.status)
+            if (result.status === 201) {
                 alert('Đăng ký thành công!')
-                history.push('/home')
+                // history.push('/home')
             }
 
-        } catch (errors) {
-            if (errors.response.data) {
-                alert(`${errors.response.data.content}`)
+        } catch (error) {
+            if (error.response.data) {
+                alert(`${error.response.data.messeger}`)
             }
 
-            console.log('error', errors);
+            console.log('error', error);
         }
     }
 

@@ -14,6 +14,7 @@ export default function App() {
         <AdminTemplate path='/admin' exact Component={''} />
         <UserTemplate path='/login' exact Component={Login} />
         <UserTemplate path='/register' exact Component={Register} />
+        <UserTemplate path='/' exact Component={Login} />
       </Switch>
     </Router>
   )

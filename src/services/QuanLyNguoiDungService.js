@@ -9,7 +9,7 @@ export class QuanLyNguoiDungService extends baseService {
     }
 
     dangNhap = (thongTinDangNhap) => {
-        return this.post(`/api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap)
+        return this.post(`/api/v1/users/login`, thongTinDangNhap)
     }
 
     layThongTinNguoiDung = () => {
@@ -17,7 +17,7 @@ export class QuanLyNguoiDungService extends baseService {
     }
 
     dangKy = (nguoiDungMoi) => {
-        return this.post(`/api/QuanLyNguoiDung/DangKy`, nguoiDungMoi)
+        return this.post(`/api/v1/users/register`, nguoiDungMoi)
     }
 
     layDanhSachNguoiDung = (nameSearch = '') => {

@@ -3,7 +3,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { dangKyAction } from '../../redux/actions/QuanLyNguoiDungAction';
-import { MA_PHIM } from '../../util/settings/config';
 import * as Yup from "yup";
 
 
@@ -14,30 +13,28 @@ export default function Register(props) {
 
     const formik = useFormik({
         initialValues: {
-            taiKhoan: '',
-            matKhau: '',
+
+            password: '',
             email: '',
-            soDt: '',
-            maNhom: MA_PHIM,
-            hoTen: ''
+            numberPhone: '',
+            name: ''
         },
         validationSchema: Yup.object({
-            taiKhoan: Yup.string()
-                .required("Required!"),
+
             email: Yup.string()
                 .email("Invalid email format")
                 .required("Required!"),
-            matKhau: Yup.string()
+            password: Yup.string()
                 .min(6, "Minimum 6 characters")
                 .required("Required!"),
-            soDt: Yup.string()
+            numberPhone: Yup.string()
                 .required("Required!"),
-            hoTen: Yup.string()
+            name: Yup.string()
                 .required("Required!"),
         }),
         onSubmit: values => {
+
             dispatch(dangKyAction(values))
-            // console.log('valuess', values)
         },
     });
     return (
@@ -46,14 +43,14 @@ export default function Register(props) {
             <form onSubmit={formik.handleSubmit} className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className='grid grid-cols-2 gap-4'>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="taiKhoan" className="block text-gray-800">Username</label>
-                        <input onChange={formik.handleChange} type="text" name="taiKhoan" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
-                        {formik.errors.taiKhoan && formik.touched.taiKhoan && (
-                            <p className='text-xs text-red-500'>{formik.errors.taiKhoan}</p>)}
+                        <label htmlFor="name" className="block text-gray-800">Full name</label>
+                        <input onChange={formik.handleChange} type="text" name="name" placeholder="Full name" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
+                        {formik.errors.hoTen && formik.touched.hoTen && (
+                            <p className='text-xs text-red-500'>{formik.errors.hoTen}</p>)}
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="matKhau" className="block text-gray-800">Password</label>
-                        <input onChange={formik.handleChange} type="password" name="matKhau" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
+                        <label htmlFor="password" className="block text-gray-800">Password</label>
+                        <input onChange={formik.handleChange} type="password" name="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
                         {formik.errors.matKhau && formik.touched.matKhau && (
                             <p className='text-xs text-red-500'>{formik.errors.matKhau}</p>)}
                     </div>
@@ -64,18 +61,13 @@ export default function Register(props) {
                             <p className='text-xs text-red-500'>{formik.errors.email}</p>)}
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="soDt" className="block text-gray-800">Phone number</label>
-                        <input onChange={formik.handleChange} type="tel" name="soDt" placeholder="Phone number" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
+                        <label htmlFor="numberPhone" className="block text-gray-800">Phone number</label>
+                        <input onChange={formik.handleChange} type="tel" name="numberPhone" placeholder="Phone number" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
                         {formik.errors.soDt && formik.touched.soDt && (
                             <p className='text-xs text-red-500'>{formik.errors.soDt}</p>)}
                     </div>
 
-                    <div className="space-y-1 text-sm">
-                        <label htmlFor="hoTen" className="block text-gray-800">Full name</label>
-                        <input onChange={formik.handleChange} type="text" name="hoTen" placeholder="Full name" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 outline-blue-300 " />
-                        {formik.errors.hoTen && formik.touched.hoTen && (
-                            <p className='text-xs text-red-500'>{formik.errors.hoTen}</p>)}
-                    </div>
+
                 </div>
                 <div className='flex justify-center'>
                     <button type='submit' className="block w-2/3 p-3 text-center rounded-md text-gray-50 bg-indigo-700 hover:bg-blue-600 duration-300">Sign up</button>
