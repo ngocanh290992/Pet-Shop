@@ -32,6 +32,7 @@ body {
   padding: 0 1.5rem;
   font-size: 1.5rem;
   background-color: #fff;
+  z-index: 1000;
 }
 
 .headerAdmin nav {
@@ -135,11 +136,12 @@ i.ri-close-line {
   border: none;
   outline: none;
   background-color: transparent;
-  padding-top: 14px;
+  padding-top: 11px;
   margin-right: 20px;
   width: 40px;
   display: none;
   transition: all 0.3s;
+  font-size: .88rem;
 }
 
 .headerAdmin__menu i.ri-close-line {
@@ -383,24 +385,77 @@ i.ri-close-line {
   }
 }
 
-/* ================ MENU ==================== */
+/* ================ MAIN ==================== */
 .main {
   padding-top: 60px;
-  /* position: relative; */
 }
 
-.menu {
-  background: #000;
-  color: white;
-  position: absolute;
-  height: 100vh;
-  width: 300px;
-  top: 60px;
+/* Show menu Admin  */
+.show-menuAdmin{
+    width: 250px !important;
+    opacity: 1 !important;
 }
 
-.content {
-  background-color: #2651be;
-  color: white;
-  text-align: center;
-  height: 100vh;
+/* ================ MENU ==================== */
+.menu{
+    background: white;
+    position: absolute;
+    height: 100vh;
+    width: 0;
+    top: 60px;
+    opacity: 0;
+    transition: all .3s;
+    padding: 0 1rem;
 }
+
+.menu--title{
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgb(41, 85, 200);
+    margin: 1rem 0;
+}
+
+.menu i{
+    margin: 0 .5rem;
+}
+
+.menu--title>i{
+    font-size: 1.2rem;
+}
+
+.menu--content ul li {
+    padding: 0 1.5rem;
+    height: 2.4rem;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    transition: all .3s;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+.menu--content ul li:hover{
+    background: #e0f3ff;
+}
+
+.menu--content ul li:hover i{
+    opacity: .8;
+}
+
+.menu--content ul li i{
+    opacity: .5;
+}
+
+
+
+
+/* ================ CONTENT ==================== */
+.content{
+    background-color: #2651be;
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
