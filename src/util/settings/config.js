@@ -1,4 +1,4 @@
-export const DOMAIN = 'https://pet-shop-db.herokuapp.com/api/v1/'
+export const DOMAIN = 'https://pet-shop-db.herokuapp.com'
 
 export const TOKEN = 'accessToken'
 
